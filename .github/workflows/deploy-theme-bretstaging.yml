@@ -2,15 +2,15 @@ name: Deploy Theme
 on:
   push:
     branches:
-      - staging-bretfisher.com
+      - bretstaging.com
 jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@
       - name: Deploy Ghost Theme
         uses: TryGhost/action-deploy-theme@v1.2.0
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL_STAGING }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY_STAGING }}
-          theme-name: my-Casper
+          theme-name: "my-Casper"
